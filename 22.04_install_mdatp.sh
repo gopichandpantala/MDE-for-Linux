@@ -31,3 +31,9 @@ cat /etc/apt/sources.list.d/*
 
 # Install mdatp with the Jammy repository target
 sudo apt -t jammy install mdatp
+
+# Executing Python file
+sudo python3 ./MicrosoftDefenderATPOnboardingLinuxServer.py
+
+# Check Health for MDATP
+sudo mdatp health
