@@ -1,5 +1,7 @@
 #!/bin/bash
 
+user=$(logname)
+
 # Install curl
 sudo apt-get install curl
 
@@ -33,7 +35,10 @@ cat /etc/apt/sources.list.d/*
 sudo apt -t jammy install mdatp
 
 # Executing Python file
-python3 /home/$USER/MDE-for-Linux/MicrosoftDefenderATPOnboardingLinuxServer.py
+sudo python3 /home/$user/MDE-for-Linux/MicrosoftDefenderATPOnboardingLinuxServer.py
+
+# sleep 10s for generating .json file
+sleep 10
 
 # Status of MDATP Service
 sudo systemctl status mdatp.service
@@ -43,6 +48,3 @@ sudo mdatp
 
 # Check Health for MDATP
 sudo mdatp health
-
-
-
