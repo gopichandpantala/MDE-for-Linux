@@ -24,7 +24,7 @@ sudo apt-get install apt-transport-https
 sudo apt-get update
 
 # Install Microsoft Defender ATP (mdatp)
-sudo apt-get install mdatp
+sudo apt-get install mdatp -y
 
 # Display contents of /etc/apt/sources.list.d/
 cat /etc/apt/sources.list.d/*
@@ -33,8 +33,10 @@ cat /etc/apt/sources.list.d/*
 sudo apt -t jammy install mdatp
 
 # Executing Python file
-sudo cd MDE-for-Linux
-sudo python3 MicrosoftDefenderATPOnboardingLinuxServer.py
+sudo python3 /home/$(whoami)/MDE-for-Linux/MicrosoftDefenderATPOnboardingLinuxServer.py
+
+# Status of MDATP Service
+sudo systemctl status mdatp.service
 
 # Microsoft Defender
 sudo mdatp
@@ -42,7 +44,5 @@ sudo mdatp
 # Check Health for MDATP
 sudo mdatp health
 
-# Status of MDATP Service
-sudo systemctl status mdatp.service
 
 
