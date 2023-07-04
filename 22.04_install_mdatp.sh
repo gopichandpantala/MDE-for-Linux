@@ -33,7 +33,7 @@ cat /etc/apt/sources.list.d/*
 sudo apt -t jammy install mdatp
 
 # Executing Python file
-sudo python3 /home/$(whoami)/MDE-for-Linux/MicrosoftDefenderATPOnboardingLinuxServer.py
+sudo python3 /home/$USER/MDE-for-Linux/MicrosoftDefenderATPOnboardingLinuxServer.py
 
 # Status of MDATP Service
 sudo systemctl status mdatp.service
